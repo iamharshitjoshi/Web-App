@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subscription Plans</title>
+    <!-- Include necessary CSS and JavaScript libraries -->
+</head>
+<body>
+    <h1>Choose a Subscription Plan</h1>
+    
+    <form id="subscriptionForm">
+        <label>
+            <input type="radio" name="plan" value="monthly" checked> Monthly Pricing
+        </label>
+        <label>
+            <input type="radio" name="plan" value="yearly"> Yearly Pricing
+        </label>
+        
+        <button type="submit">Subscribe</button>
+    </form>
+    
+    <script>
+        document.getElementById('subscriptionForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const selectedPlan = document.querySelector('input[name="plan"]:checked').value;
+            
+            // Call a function to handle subscription using Stripe API
+            await subscribeToPlan(selectedPlan);
+        });
+        
+        async function subscribeToPlan(plan) {
+            // Use fetch or another library to make API requests to your backend
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ plan }),
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                alert('Subscription successful!');
+            } else {
+                alert('Subscription failed. Please try again later.');
+            }
+        }
+    </script>
+</body>
+</html>

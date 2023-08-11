@@ -1,0 +1,95 @@
+
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to top left, #3effd5, #a8ffff);
+  }
+
+  .pricing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pricing-table {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px;
+  }
+
+  .pricing-plan {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    width: 300px;
+  }
+
+  .pricing-plan h2 {
+    margin-top: 0;
+  }
+
+  .price {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .billing-cycle {
+    margin-bottom: 15px;
+  }
+
+  .billing-button {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .billing-button.active {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+  }
+
+  .features {
+    list-style: none;
+    padding: 0;
+  }
+
+  .feature {
+    margin-bottom: 5px;
+  }
+
+  .cta-button {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+
+  .cta-button:hover {
+    background-color: #0056b3;
+  }
+
+  .next-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+
+  .next-button:hover {
+    background-color: #0056b3;
+  }

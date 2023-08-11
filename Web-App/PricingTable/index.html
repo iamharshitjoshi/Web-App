@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="pricing-container">
+  <div class="pricing-table">
+
+    <div class="pricing-plan">
+        <h2>Mobile</h2>
+        <div class="price">
+          <span class="price-amount">Rs.1000</span>
+          <span class="price-cycle">/month</span>
+        </div>
+        <div class="billing-cycle">
+          <span class="billing-button" data-cycle="monthly">Monthly</span>
+          <span class="billing-button active" data-cycle="yearly">Yearly</span>
+        </div>
+        <ul class="features">
+          <li class="feature">Video Quality: Good</li>
+          <li class="feature">Resolution: 4K</li>
+          <li class="feature">Devices: 1</li>
+        </ul>
+        <a href="/CheckoutPage/" class="cta-button">Get Started</a>
+      </div>
+
+    <div class="pricing-plan">
+      <h2>Basic</h2>
+      <div class="price">
+        <span class="price-amount">Rs.2000</span>
+        <span class="price-cycle">/month</span>
+      </div>
+      <div class="billing-cycle">
+        <span class="billing-button active" data-cycle="monthly">Monthly</span>
+        <span class="billing-button" data-cycle="yearly">Yearly</span>
+      </div>
+      <ul class="features">
+        <li class="feature">Video Quality: Good</li>
+        <li class="feature">Resolution: 480p</li>
+        <li class="feature">Devices: 2</li>
+      </ul>
+      <a href="/CheckoutPage/" class="cta-button">Get Started</a>
+    </div>
+
+    <div class="pricing-plan">
+      <h2>Standard</h2>
+      <div class="price">
+        <span class="price-amount">Rs.5000</span>
+        <span class="price-cycle">/month</span>
+      </div>
+      <div class="billing-cycle">
+        <span class="billing-button" data-cycle="monthly">Monthly</span>
+        <span class="billing-button active" data-cycle="yearly">Yearly</span>
+      </div>
+      <ul class="features">
+        <li class="feature">Video Quality: Better</li>
+        <li class="feature">Resolution: 720p</li>
+        <li class="feature">Devices: 3</li>
+      </ul>
+      <a href="/CheckoutPage/" class="cta-button">Get Started</a>
+    </div>
+    <div class="pricing-plan">
+      <h2>Premium</h2>
+      <div class="price">
+        <span class="price-amount">Rs.7000</span>
+        <span class="price-cycle">/month</span>
+      </div>
+      <div class="billing-cycle">
+        <span class="billing-button" data-cycle="monthly">Monthly</span>
+        <span class="billing-button active" data-cycle="yearly">Yearly</span>
+      </div>
+      <ul class="features">
+        <li class="feature">Video Quality: Best</li>
+        <li class="feature">Resolution: 4K</li>
+        <li class="feature">Devices: 4</li>
+      </ul>
+      <a href="/CheckoutPage/" class="cta-button">Get Started</a>
+    </div>
+  </div>
+</div>
+
+<div class="pricing-container">
+  <button class="next-button">Next</button>
+</div>
+
+<script>
+  const billingButtons = document.querySelectorAll('.billing-button');
+
+  billingButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      billingButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      const cycle = button.getAttribute('data-cycle');
+      const priceElements = document.querySelectorAll('.price-cycle');
+      priceElements.forEach(element => {
+        element.textContent = '/' + (cycle === 'monthly' ? 'month' : 'year');
+      });
+    });
+  });
+
+  const nextButton = document.querySelector('.next-button');
+
+  nextButton.addEventListener('click', () => {
+    // Handle the "Next" button click event here
+    // For example, you can navigate to the next step or page
+    alert("Proceed to the next step!");
+  });
+</script>
+
+</body>
+</html>
